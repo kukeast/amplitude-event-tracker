@@ -1,0 +1,47 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #1e1f21;
+    font-family: monospace;
+    font-size: 13px;
+    color: white;
+}
+.list{
+    display: flex;
+    padding: 20px;
+    border-bottom: 1px solid #494c50;
+    animation: focus 2s;
+}
+@keyframes focus {
+    0% {
+        background: #363639;
+    }
+    100% {
+        background-color: #1e1f21;
+    }
+}
+.title{
+    width: 200px;
+    color: white;
+    margin-top: 4px;
+}
+.props{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+}
+.prop{
+    display: flex;
+    gap: 4px;
+}
+.key{
+    color: #72b2ff;
+}
+.value{
+    color: #ffa54f;
+}
