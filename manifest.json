@@ -3,10 +3,5 @@
     "version": "0.1",
     "description": "앰플리튜드로 보내는 이벤트를 보여줍니다.",
     "devtools_page": "devtools.html",
-    "permissions": [
-        "tabs", 
-        "http://*/*",
-        "https://*/*"
-    ],
-    "manifest_version": 2
+    "manifest_version": 3
 }
