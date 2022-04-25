@@ -10,7 +10,27 @@ body{
     font-size: 13px;
     color: white;
 }
-.list{
+.actions{
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 8px;
+    background: #1e1f21;
+    border-bottom: 1px solid #494c50;
+}
+.actions > div{
+    padding: 6px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.actions > div:hover{
+    background-color: #363639;
+}
+.events{
+    margin-top: 44px;
+}
+.event{
     display: flex;
     padding: 20px;
     border-bottom: 1px solid #494c50;
@@ -44,4 +64,14 @@ body{
 }
 .value{
     color: #ffa54f;
+}
+
+@media only screen and (max-width: 600px) {
+    .event{
+        flex-direction: column;
+        gap: 24px;
+    }
+    .props{
+        padding-left: 40px;
+    }
 }

@@ -4,33 +4,42 @@
 // chrome.devtools.*
 // chrome.extension.*
 
+window.onload = function () {
+    document.querySelector('.clear').addEventListener('click', clearEvents);
+}
+
+var lastEventId = 0;
+
 chrome.devtools.network.onRequestFinished.addListener(
     function(d) {
         if(d.request.url == 'https://api.amplitude.com/'){
-            if(d.request.method == 'POST'){
-                const data = JSON.parse(decodeURIComponent(d.request.postData.params.filter(i=>i.name == 'e')[0].value))[0]
-                if(data.event_type != '$identify'){
-                    drawEvent(data)
-                }
+            if(d.request.method == 'POST' && d.request.postData){
+                const data = JSON.parse(decodeURIComponent(d.request.postData.params.filter(i=>i.name == 'e')[0].value))
+                data.filter(i => i.event_type != '$identify').forEach(event => {
+                    if(event.event_id > lastEventId){
+                        drawEvent(event)
+                        lastEventId = event.event_id
+                    }
+                })
             }
         }
     }
 );
 
 var drawEvent = function(data){
-    var bodyElem = document.querySelector('body');
+    var EventsElem = document.querySelector('.events');
 
-    var listElem = document.createElement("div");
-	listElem.classList.add("list");
+    var EventElem = document.createElement("div");
+	EventElem.classList.add("event");
 
     var TitleElem = document.createElement("p");
 	TitleElem.classList.add("title");
     TitleElem.innerHTML = data.event_type;
-    listElem.append(TitleElem);
+    EventElem.append(TitleElem);
 
     var PropsElem = document.createElement("div");
 	PropsElem.classList.add("props");
-    listElem.append(PropsElem);
+    EventElem.append(PropsElem);
 
     Object.keys(data.event_properties).forEach( key => {
         var PropElem = document.createElement("div");
@@ -53,5 +62,10 @@ var drawEvent = function(data){
         PropsElem.append(PropElem);
     });
 
-    bodyElem.prepend(listElem);
+    EventsElem.prepend(EventElem);
+}
+
+var clearEvents = function(){
+    var EventsElem = document.querySelector('.events');
+    EventsElem.innerHTML = ''
 }
