@@ -34,7 +34,7 @@ var drawEvent = function(data){
 
     var TitleElem = document.createElement("p");
 	TitleElem.classList.add("title");
-    TitleElem.innerHTML = data.event_type;
+    TitleElem.innerText = data.event_type;
     EventElem.append(TitleElem);
 
     var PropsElem = document.createElement("div");
@@ -47,16 +47,16 @@ var drawEvent = function(data){
         
         var KeyElem = document.createElement("p");
         KeyElem.classList.add("key");
-        KeyElem.innerHTML = key;
+        KeyElem.innerText = key;
         PropElem.append(KeyElem);
     
         var ColonElem = document.createElement("p");
-        ColonElem.innerHTML = ":";
+        ColonElem.innerText = ":";
         PropElem.append(ColonElem);
     
         var ValueElem = document.createElement("p");
         ValueElem.classList.add("value");
-        ValueElem.innerHTML = data.event_properties[key];
+        ValueElem.innerText = data.event_properties[key];
         PropElem.append(ValueElem);
 
         PropsElem.append(PropElem);
@@ -67,5 +67,5 @@ var drawEvent = function(data){
 
 var clearEvents = function(){
     var EventsElem = document.querySelector('.events');
-    EventsElem.innerHTML = ''
+    EventsElem.innerText = ''
 }
