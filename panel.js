@@ -6,6 +6,7 @@
 
 window.onload = function () {
     document.querySelector('.clear').addEventListener('click', clearEvents);
+    document.querySelector('.search').addEventListener('keyup', filter);
 }
 
 var lastEventId = 0;
@@ -68,4 +69,17 @@ var drawEvent = function(data){
 var clearEvents = function(){
     var EventsElem = document.querySelector('.events');
     EventsElem.innerText = ''
+}
+var filter = function(){
+    var searchValue = document.querySelector('.search').value.toLowerCase();
+    var eventElem = document.querySelectorAll('.event');
+
+    for(i=0; i<eventElem.length; i++){
+        title = eventElem[i].getElementsByClassName("title");
+        if(title[0].innerText.toLowerCase().indexOf(searchValue) != -1){
+            eventElem[i].style.display = "flex";
+        }else{
+            eventElem[i].style.display = "none";
+        }
+    }
 }
