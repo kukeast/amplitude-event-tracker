@@ -6,11 +6,34 @@
 		<link href="panel.css" rel="stylesheet">
 	</head>
 	<body>
-		<div class="actions">
-			<p class="count">315 events</p>
-			<div class="clear">clear</div>
-			<div><input type="text" class="search" placeholder="event name" /></div>
+		<div class="header">
+			<div class="actions">
+				<p class="event-length"><span class="count">0</span> events</p>
+				<div class="loading hide"><div></div></div>
+				<div class="view button">expand</div>
+				<div class="clear button">clear</div>
+			</div>
+			<input type="text" class="search" placeholder="filter" />
 		</div>
-		<div class="events"></div>
+		<div class="wrapper">
+			<div class="events">
+				<!-- <div class="event" event_id="2873" style="display: flex;">
+					<p class="title">Click_요금제-필터</p>
+					<div class="in-props"><div class="prop"><p class="key">planName</p><p>:</p><p class="value">[모요only]인스유심 스트롱 11GB+</p></div><div class="prop"><p class="key">planId</p><p>:</p><p class="value">10325</p></div><div class="prop"><p class="key">mvno</p><p>:</p><p class="value">insmobile</p></div><div class="prop"><p class="key">stage</p><p>:</p><p class="value">고객유형</p></div><div class="prop"><p class="key">substage</p><p>:</p><p class="value">고객유형</p></div><div class="prop"><p class="key">previous_page</p><p>:</p><p class="value">https://www.moyoplan.com/plans?page=0&amp;size=10&amp;addInfo=show12MonthFee&amp;sorting=fee_desc&amp;searchText=</p></div><div class="prop"><p class="key">pathname</p><p>:</p><p class="value">/</p></div><div class="prop"><p class="key">url</p><p>:</p><p class="value">https://www.moyoplan.com/?category=0&amp;phoneCategory=iPhone13</p></div></div>
+				</div> -->
+			</div>
+			<div class="props">
+				<!-- <div class="prop">
+					<p class="key">category</p>
+					<p>:</p>
+					<p class="value">addInfo</p>
+				</div>
+				<div class="prop">
+					<p class="key">category</p>
+					<p>:</p>
+					<p class="value">addInfo</p>
+				</div> -->
+			</div>
+		</div>
 	</body>
 </html>
