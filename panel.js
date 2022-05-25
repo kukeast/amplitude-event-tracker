@@ -166,9 +166,9 @@ var changeEventsLength = function(){
     var EventElem = document.querySelectorAll('.event');
     var HideElem = document.querySelectorAll('.event.hide');
     if(HideElem.length == 0){
-        CountElem.innerHTML = EventElem.length;
+        CountElem.innerText = EventElem.length;
     }else{
-        CountElem.innerHTML = EventElem.length - HideElem.length + "/" + EventElem.length;
+        CountElem.innerText = EventElem.length - HideElem.length + "/" + EventElem.length;
     }
 }
 var toggleFold = function(){
