@@ -3,4 +3,4 @@
 // chrome.extension.*
 
 // Create a tab in the devtools area
-chrome.devtools.panels.create("AET", "icon.png", "panel.html", function(panel) {});
+chrome.devtools.panels.create("Event Tracker", "icon.png", "panel.html", function (panel) { });

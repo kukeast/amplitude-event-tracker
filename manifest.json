@@ -1,7 +1,29 @@
 {
-    "name": "Amplitude Event Tracker",
+    "name": "Moyo Extension",
     "version": "0.3",
-    "description": "앰플리튜드로 보내는 이벤트를 보여줍니다.",
+    "description": "모요에서 발생하는 이벤트를 보여주고 쿠키 기반의 테스트를 컨트롤 할 수 있습니다.",
     "devtools_page": "devtools.html",
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "images/icon16.png",
+            "24": "images/icon24.png",
+            "32": "images/icon32.png",
+            "128": "images/icon128.png"
+    }
+    },
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "permissions": [
+        "cookies",
+        "activeTab"
+    ],
+    "icons": {
+        "16": "images/icon16.png",
+        "32": "images/icon32.png",
+        "48": "images/icon48.png",
+        "128": "images/icon128.png"
+    },
     "manifest_version": 3
 }
