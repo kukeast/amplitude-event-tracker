@@ -30,10 +30,14 @@ var domain
 window.onload = function () {
     document.querySelector('.clear').addEventListener('click', clearEvents);
 }
-chrome.tabs.query({ active: true, currentWindow: true }, (tab) => {
-    url = tab[0].url;
-    domain = new URL(url).hostname;
-    getCookies();
+chrome.identity.getProfileUserInfo(info => {
+    if(info.email.includes('@moyoplan.com')){
+        chrome.tabs.query({ active: true, currentWindow: true }, (tab) => {
+            url = tab[0].url;
+            domain = new URL(url).hostname;
+            getCookies();
+        });
+    }
 });
 
 const getCookies = function(){

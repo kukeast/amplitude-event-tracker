@@ -17,7 +17,9 @@
     ],
     "permissions": [
         "cookies",
-        "activeTab"
+        "activeTab",
+        "identity",
+        "identity.email"
     ],
     "icons": {
         "16": "images/icon16.png",
