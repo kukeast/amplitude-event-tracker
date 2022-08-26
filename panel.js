@@ -53,7 +53,7 @@ chrome.devtools.network.onRequestFinished.addListener(
                     }
                 })
             }
-        } else if (d.request.url == 'https://log.alpha.moyoplan.com/log') {
+        } else if (d.request.url.indexOf('moyoplan.com/log') > -1) {
             const data = JSON.parse(d.request.postData.text)
             const eventId = Date.now()
             events[eventId] = data;
